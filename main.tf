@@ -6,6 +6,12 @@ terraform {
       version = "2.85.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name = "shared"
+    storage_account_name = "sharedsa"
+    container_name = "tfstate"
+    key = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
